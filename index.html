@@ -67,50 +67,6 @@
       border: none;
     }
 
-    /* Botões */
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .btn-sim {
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      color: #fff;
-      font-size: 1.1rem;
-      font-weight: 700;
-      padding: 18px 24px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .btn-sim:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(34, 197, 94, 0.4);
-    }
-
-    .btn-nao {
-      background: transparent;
-      color: #666;
-      font-size: 0.85rem;
-      padding: 12px 24px;
-      border: 1px solid #333;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: color 0.15s, border-color 0.15s;
-      text-decoration: none;
-      display: block;
-    }
-
-    .btn-nao:hover {
-      color: #999;
-      border-color: #555;
-    }
-
     @media (max-width: 480px) {
       .upsell-block {
         padding: 28px 20px;
@@ -137,31 +93,14 @@
       </iframe>
     </div>
 
-    <!-- BOTÕES -->
-    <div class="buttons">
-      <button class="btn-sim" onclick="handleSim()">
-        ✅ Sim! Eu Quero Aproveitar Essa Oferta
-      </button>
-      <a href="#" class="btn-nao" onclick="handleNao(event)">
-        Não, obrigado. Não quero essa oferta.
-      </a>
-    </div>
+    <!-- HOTMART - Sales Funnel Widget -->
+    <div id="hotmart-sales-funnel"></div>
+    <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+    <script>
+      checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+    </script>
+    <!-- HOTMART - Sales Funnel Widget -->
   </div>
-
-  <script>
-    function handleSim() {
-      // Redirecione para a página de checkout ou próxima etapa
-      alert('Ótimo! Redirecionando para o checkout...');
-      // window.location.href = 'https://seu-checkout.com';
-    }
-
-    function handleNao(e) {
-      e.preventDefault();
-      // Redirecione para a próxima página ou página de obrigado
-      alert('Tudo bem! Redirecionando...');
-      // window.location.href = 'https://obrigado.com';
-    }
-  </script>
 
 </body>
 </html>
